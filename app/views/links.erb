@@ -1,0 +1,15 @@
+<body>
+<ul id="links">
+
+
+  <% @links.each do |link| %>
+
+
+  <a href="<%= link.url %>"><%= link.title %></a>
+  <% end %>
+
+  <!-- <%= @links %> -->
+</ul>
+</body>
+
+<!-- <a href="http://www.makersacademy.com">Makers Academy</a> -->
