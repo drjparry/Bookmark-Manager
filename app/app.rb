@@ -12,6 +12,15 @@ class BookMarkManager < Sinatra::Base
     erb :links
   end
 
+  post '/links' do
+    Link.create(title: params['Title'], url: params['Link'])
+    redirect('/links')
+  end
+
+  get '/links/new' do
+    erb :links_new
+  end
+
 
 
 
