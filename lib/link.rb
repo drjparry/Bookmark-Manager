@@ -1,8 +1,10 @@
+require 'data_mapper'
+require 'dm-postgres-adapter'
+
 class Link
   include DataMapper::Resource
-  
+
   property :id,          Serial
-  property :link,        String
-  property :link_txt,    String
-  property :description, Text
+  property :title,       String
+  property :url,        String
 end
