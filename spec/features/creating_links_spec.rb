@@ -2,9 +2,12 @@
 # So that I can save a website
 # I would like to add the site's address and title to my bookmark manager
 
+
 feature 'Adding links' do
 
+
   scenario "adding a site's address and title to bookmark manager" do
+    DatabaseCleaner.start
     visit '/links'
     click_button("Add link")
     fill_in('url', with: "http://www.google.com")
@@ -14,5 +17,6 @@ feature 'Adding links' do
     within 'ul#links' do
       expect(page).to have_content("Google")
     end
+    DatabaseCleaner.clean
   end
 end
