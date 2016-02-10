@@ -1,3 +1,5 @@
+
+
 feature 'can see a list of links' do
   scenario 'can see links' do
     Link.create(url: 'http://www.makersacademy.com', title: 'Makers Academy')
