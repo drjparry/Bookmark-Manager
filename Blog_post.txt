@@ -1,0 +1,5 @@
+Relational databases vs NoSQL and flat files.
+
+Relational databases are based on tables made of rows and columns. The database has a rather fixed schema that you need to know in advance. They handle vast amounts of transactions. If you want to change the schema you need to put the database offline. Most are based on SQL a language developed in the 70's.
+NoSQL databases a were developed as a reaction on limitations of SQL databases. Like handling large amounts of different kind of objects and store them in different ways.
+A flat file database has no structure and there are no structural relationships. It contains only text and must be loaded entirely in the computers memory.
