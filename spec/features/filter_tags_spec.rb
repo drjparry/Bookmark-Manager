@@ -17,4 +17,5 @@ feature 'can filter tags' do
       expect(page).to have_content('Bubble Bobble')
     end
   end
+
 end
