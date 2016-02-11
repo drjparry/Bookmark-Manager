@@ -1,7 +1,18 @@
-<h1>Add a new link!</h1>
-<form action = '/links' method = 'post'>
-  <input type = "text" name = "Title">
-  <input type = "text" name = "Link">
-  <input type = "submit" value = 'Submit'>
-</form>
+<h1> New Link </h1>
 
+<form action='/links' method='POST'>
+  <label for='title'>
+    Title:
+    <input type='text' name='Title' />
+  </label>
+  <label for='url'>
+    URL:
+    <input type='text' name='Link' />
+  </label>
+  <label for='tags'>
+    Tags:
+    <input type='text' name='Tags' />
+  </label>
+  <input type='submit' value='Submit' />
+
+</form>
