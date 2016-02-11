@@ -1,6 +1,7 @@
 feature 'user can add links' do
   scenario 'adding links' do
-    visit('/links/new')
+    visit('/links')
+    click_link('Add a New Link')
     fill_in('Title', with: 'Makers Curriculum')
     fill_in 'Link', :with => 'http://ronin.makersacademy.com/curriculum/'
     click_button('Submit')
@@ -8,8 +9,8 @@ feature 'user can add links' do
   end
 
   scenario 'adding tags to links' do
-
-    visit('/links/new')
+    visit('/links')
+    click_link('Add a New Link')
     fill_in('Title', with: 'Makers Curriculum')
     fill_in 'Link', :with => 'http://ronin.makersacademy.com/curriculum/'
     fill_in('Tags', with: 'Coding' )

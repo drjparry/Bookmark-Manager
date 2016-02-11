@@ -2,8 +2,9 @@
 <ul id='links'>
 <% @links.each do |link|%>
   <li>
-    Title:<%= link.title %>
+    Title: <%= link.title %>
     URL: <%= link.url %>
   </li>
   <%end%>
 </ul>
+<a href="/links/new"><button>Add a New Link</button></a>
