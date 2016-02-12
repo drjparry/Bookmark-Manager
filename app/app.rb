@@ -5,12 +5,16 @@ require 'sinatra/base'
 require_relative 'data_mapper_setup'
 
 class BookMarkManager < Sinatra::Base
+  enable :sessions
+
+
 
   get '/' do
     redirect('/links')
   end
 
   get '/links' do
+    @current_user = session[:user_id]
     @links = Link.all
     erb :links
   end
@@ -33,6 +37,20 @@ class BookMarkManager < Sinatra::Base
     @links = tag ? tag.links : []
     erb :links
   end
+
+  get '/sign_up' do
+    erb :sign_up
+  end
+
+  post '/sign_up' do
+    user = User.create(name: params[:name], email: params[:email], password: params[:password])
+    session[:user_id] = user.name
+
+    redirect '/links'
+  end
+
+
+
 
 
 run! if app_file == $0

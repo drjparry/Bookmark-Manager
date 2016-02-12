@@ -15,3 +15,5 @@ namespace :db do
     puts "Auto-migrate complete (data was lost)"
   end
 end
+
+# heroku run rake db:auto_upgrade
