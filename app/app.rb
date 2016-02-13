@@ -8,6 +8,7 @@ require 'sinatra/flash'
 class BookMarkManager < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
+  use Rack::MethodOverride
 
 
 
@@ -71,7 +72,13 @@ class BookMarkManager < Sinatra::Base
       flash.now[:errors] = ['The email or password is incorrect']
       erb :'sessions/new'
     end
+   end
 
+   delete '/log_out' do
+    puts params[:delete].nil?
+    session[:user_id] = nil
+    flash.keep[:notice] = 'goodbye!'
+    redirect '/links'
    end
 
 

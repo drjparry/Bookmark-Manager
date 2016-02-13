@@ -1,3 +1,8 @@
+<% if flash[:notice] %>
+    <div id='notice'>
+      <%= flash[:notice] %>
+    </div>
+  <% end %>
 
 
 <h1>Your Links</h1>
@@ -10,4 +15,8 @@
   </li>
   <%end%>
 </ul>
+<form action="/log_out" method='post'>
+  <input type='hidden' name='_method' value='delete'>
+  <input type='submit' value='Log out'>
+</form>
 <a href="/links/new"><button>Add a New Link</button></a>
